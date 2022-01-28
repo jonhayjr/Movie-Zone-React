@@ -8,11 +8,11 @@ const Filterbox = ({searchForMovie}: FilterboxProps) => {
     const [search, setSearch] = useState('');
     const [validationAlert, setValidationAlert] = useState(false);
 
-    const handleChange = (e: ReactChangeEvent<HTMLInputEvent>) => {
+    const handleChange = (e: React.FormEvent<HTMLInputEvent>): void => {
         setSearch(e.target.value);
     }
 
-    const handleSubmit = (e: ReactSyntheticEvent<HTMLButtonEvent>) => {
+    const handleSubmit = (e: ReactSyntheticEvent) => {
         e.preventDefault();
 
         if (search) {
