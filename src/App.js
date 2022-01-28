@@ -9,6 +9,7 @@ import FavoriteMoviesContainer from './components/FavoriteMoviesContainer/Favori
 import FavoriteMoviesItem from './components/FavoriteMoviesItem/FavoriteMoviesItem';
 import MovieTileContainer from './components/MovieTileContainer/MovieTileContainer';
 import MovieTile from './components/MovieTile/MovieTile';
+import Footer from './components/Footer/Footer';
 
 const apiKey = process.env.REACT_APP_MOVIES_API_KEY;
 
@@ -75,6 +76,7 @@ const App = () => {
           ))
         }
       </MovieTileContainer>
+      <Footer/>
     </div>
   );
 }

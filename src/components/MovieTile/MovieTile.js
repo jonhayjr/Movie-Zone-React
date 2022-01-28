@@ -16,7 +16,7 @@ const MovieTile = ({movie, addMovieToFavorites, removeMovieFromFavorites}) => {
 
   return (
     <div className="card w-100 movie-card bg-dark text-white text-center rounded">
-        <img className="card-img-top img-fluid" src={movie.Poster} alt={movie.Title}/>
+        <img className="card-img-top" src={movie.Poster} alt={movie.Title}/>
         <div className="card-body d-flex flex-column movie-body">
             <h5 className="card-title h5 justify-content-center">{movie.Title}</h5>
             <p className="card-text justify-content-center">{movie.Year}</p>
