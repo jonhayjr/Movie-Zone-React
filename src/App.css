@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  margin-bottom: 60px;
+}
+
+/*Movie Tile Container*/
 .grid-container {
   margin-top: 1rem;
   display: grid;
@@ -22,4 +27,25 @@
       width: 1200px;
       margin: auto;
   }
+}
+
+/*Movie Tile*/
+.movie-card {
+  height: 640px;
+}
+
+.movie-card > img {
+  height: 450px;
+}
+
+.movie-body {
+  height: 100px;
+}
+
+.movie-card:hover {
+  cursor: pointer;
+}
+
+.margin-top-auto {
+  margin-top: auto;
 }

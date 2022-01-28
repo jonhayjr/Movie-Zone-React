@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FavoriteMoviesItem = ({movie}) => {
+const FavoriteMoviesItem = ({favMovie}) => {
   return (
-      <p className="bg-dark text-white mt-2 mb-2 p-2 h4">{movie.Title}</p>
+      <p className="bg-dark text-white mt-2 mb-2 p-2 h4">{favMovie.Title}</p>
   );
 };
 
