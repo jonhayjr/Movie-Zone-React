@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 
-const Filterbox = ({searchForMovie}) => {
+type FilterboxProps = {
+    searchForMovie: (search: string) => void;
+}
+
+const Filterbox = ({searchForMovie}: FilterboxProps) => {
     const [search, setSearch] = useState('');
     const [validationAlert, setValidationAlert] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (e: ReactChangeEvent) => {
         setSearch(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: ReactSyntheticEvent) => {
         e.preventDefault();
 
         if (search) {

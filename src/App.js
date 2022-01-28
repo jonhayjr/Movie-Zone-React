@@ -4,7 +4,7 @@ import './App.css';
 
 /*Import Components*/ 
 import Header from './components/Header/Header';
-import Filterbox from './components/Filterbox/Filterbox';
+import Filterbox from './components/Filterbox/Filterbox.tsx';
 import FavoriteMoviesContainer from './components/FavoriteMoviesContainer/FavoriteMoviesContainer';
 import FavoriteMoviesItem from './components/FavoriteMoviesItem/FavoriteMoviesItem';
 import MovieTileContainer from './components/MovieTileContainer/MovieTileContainer';
