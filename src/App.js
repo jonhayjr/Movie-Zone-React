@@ -17,7 +17,6 @@ const App = () => {
 
   const [movies, setMovies] = useState([]);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
-  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     const defaultSearch = 'marvel';
