@@ -33,7 +33,7 @@ const Filterbox = ({searchForMovie}) => {
         </div>
 
         <form className="input-group mb-3 w-75 mx-auto mt-3" autoComplete="off" onSubmit={(e) => {handleSubmit(e)}}>
-            <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Search for Movie" name="search" onChange={(e) => {handleChange(e)}}/>
+            <input type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Search for Movie" name="search" onChange={(e) => {handleChange(e)}} value={search}/>
             <button className="btn-secondary btn">Search</button>
         </form>
     </>

@@ -5,6 +5,7 @@ import './App.css';
 /*Import Components*/ 
 import Header from './components/Header/Header';
 import Filterbox from './components/Filterbox/Filterbox';
+import FavoriteMoviesContainer from './components/FavoriteMoviesContainer/FavoriteMoviesContainer';
 
 const apiKey = process.env.REACT_APP_MOVIES_API_KEY;
 
