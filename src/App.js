@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Filterbox from './components/Filterbox/Filterbox';
 import FavoriteMoviesContainer from './components/FavoriteMoviesContainer/FavoriteMoviesContainer';
+import FavoriteMoviesItem from './components/FavoriteMoviesItem/FavoriteMoviesItem';
 
 const apiKey = process.env.REACT_APP_MOVIES_API_KEY;
 
@@ -41,7 +42,11 @@ const App = () => {
       <Header/>
       <Filterbox searchForMovie={searchForMovie}/>
       <FavoriteMoviesContainer favoriteMovies={favoriteMovies}>
-
+        {
+          favoriteMovies.map((movie, index) => (
+            <FavoriteMoviesItem key={index} movie={movie}/>
+          ))
+        }
       </FavoriteMoviesContainer>
     </div>
   );
