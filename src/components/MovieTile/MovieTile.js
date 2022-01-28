@@ -1,5 +1,3 @@
-import React, {useState} from 'react';
-
 const MovieTile = ({movie, addMovieToFavorites, removeMovieFromFavorites, favoriteMovies}) => {
 
     const handleAddMovie = () => {
