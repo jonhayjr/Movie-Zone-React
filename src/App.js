@@ -40,6 +40,9 @@ const App = () => {
     <div className="App">
       <Header/>
       <Filterbox searchForMovie={searchForMovie}/>
+      <FavoriteMoviesContainer favoriteMovies={favoriteMovies}>
+
+      </FavoriteMoviesContainer>
     </div>
   );
 }
