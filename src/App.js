@@ -10,6 +10,7 @@ import FavoriteMoviesItem from './components/FavoriteMoviesItem/FavoriteMoviesIt
 import MovieTileContainer from './components/MovieTileContainer/MovieTileContainer';
 import MovieTile from './components/MovieTile/MovieTile';
 import Footer from './components/Footer/Footer';
+import Spinner from './components/Spinner/Spinner';
 
 const apiKey = process.env.REACT_APP_MOVIES_API_KEY;
 
@@ -17,6 +18,7 @@ const App = () => {
 
   const [movies, setMovies] = useState([]);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const defaultSearch = 'marvel';
@@ -24,11 +26,15 @@ const App = () => {
   }, []);
 
   const getMovies = (search) => {
+    //Set isLoading to true
+    setIsLoading(true);
+
     const URL = `https://www.omdbapi.com/?apiKey=${apiKey}&type=movie&s=${search}`;
     axios.get(URL)
           .then(
             res => {
               setMovies(res.data.Search);
+              setIsLoading(false);
             })
             .catch(err => {
               console.log(err);
@@ -68,13 +74,15 @@ const App = () => {
           ))
         }
       </FavoriteMoviesContainer>
-      <MovieTileContainer>
+      {isLoading 
+      ? <Spinner/>
+      : <MovieTileContainer>
         {
           movies.map((movie, index) => (
-            <MovieTile key={index} movie={movie} addMovieToFavorites={addMovieToFavorites} removeMovieFromFavorites={removeMovieFromFavorites}/>
+            <MovieTile key={index} movie={movie} addMovieToFavorites={addMovieToFavorites} removeMovieFromFavorites={removeMovieFromFavorites} favoriteMovies={favoriteMovies}/>
           ))
         }
-      </MovieTileContainer>
+      </MovieTileContainer>}
       <Footer/>
     </div>
   );
