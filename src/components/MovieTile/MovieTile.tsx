@@ -1,4 +1,14 @@
-const MovieTile = ({movie, addMovieToFavorites, removeMovieFromFavorites, favoriteMovies}) => {
+import React from 'react';
+import { Movie } from '../../interfaces/MovieInterface';
+
+  interface MovieTileProps {
+      movie: Movie,
+      addMovieToFavorites: (movie: Movie) => void,
+      removeMovieFromFavorites: (movie: Movie) => void,
+      favoriteMovies: Movie[]
+  }
+
+const MovieTile = ({movie, addMovieToFavorites, removeMovieFromFavorites, favoriteMovies}: MovieTileProps) => {
 
     const handleAddMovie = () => {
         addMovieToFavorites(movie);
@@ -8,7 +18,7 @@ const MovieTile = ({movie, addMovieToFavorites, removeMovieFromFavorites, favori
         removeMovieFromFavorites(movie);
     }
 
-    const checkIfFavorited = (movie) => {
+    const checkIfFavorited = (movie: Movie) => {
         return favoriteMovies.indexOf(movie) >= 0 ? true : false;
     }
 

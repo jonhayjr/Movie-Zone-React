@@ -1,6 +1,18 @@
 import React from 'react';
 
-const FavoriteMoviesContainer = ({children, favoriteMovies}) => {
+interface FavoriteMoviesContainerProps {
+  children: React.ReactNode,
+  favoriteMovies: {
+    Title: string,
+    Year: string,
+    imdbID: string,
+    Type: string,
+    Poster: string
+  }[]
+}
+
+
+const FavoriteMoviesContainer = ({children, favoriteMovies}: FavoriteMoviesContainerProps) => {
 
   return (
     <div className="text-center mt-4 mb-4 w-75 mx-auto">

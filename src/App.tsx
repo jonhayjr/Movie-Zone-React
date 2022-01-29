@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import { Movie } from './interfaces/MovieInterface';
 
 /*Import Components*/ 
 import Header from './components/Header/Header';
@@ -14,10 +15,11 @@ import Spinner from './components/Spinner/Spinner';
 
 const apiKey = process.env.REACT_APP_MOVIES_API_KEY;
 
+
 const App = () => {
 
-  const [movies, setMovies] = useState([]);
-  const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ const App = () => {
     getMovies(defaultSearch);
   }, []);
 
-  const getMovies = (search) => {
+  const getMovies = (search: string) => {
     //Set isLoading to true
     setIsLoading(true);
 
@@ -41,11 +43,11 @@ const App = () => {
             })
   }
 
-  const searchForMovie = (search) => {
+  const searchForMovie = (search: string) => {
     getMovies(search);
   }
 
-  const addMovieToFavorites = (movie) => {
+  const addMovieToFavorites = (movie: Movie) => {
     setFavoriteMovies(prev => {
       const data = [...prev];
       data.push(movie);
@@ -53,7 +55,7 @@ const App = () => {
     })
   }
 
-  const removeMovieFromFavorites = (movie) => {
+  const removeMovieFromFavorites = (movie: Movie) => {
     setFavoriteMovies(prev => {
       const data = [...prev];
       const newFavorites = data.filter(m => {
@@ -73,7 +75,7 @@ const App = () => {
             <FavoriteMoviesItem key={index} favMovie={favMovie}/>
           ))
         }
-      </FavoriteMoviesContainer>
+      </FavoriteMoviesContainer>  
       {isLoading 
       ? <Spinner/>
       : <MovieTileContainer>

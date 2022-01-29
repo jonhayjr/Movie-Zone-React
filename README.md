@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an app that I build using React and Typescript.  It allows use users to search for movies and then add those movies to their favorites.
 
 Click [here](https://movie-zone-react.netlify.app/) for a live preview.
 
