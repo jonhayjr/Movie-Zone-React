@@ -71,7 +71,7 @@ const App = () => {
       <Filterbox searchForMovie={searchForMovie}/>
       <FavoriteMoviesContainer favoriteMovies={favoriteMovies}>
         {
-          favoriteMovies.map((favMovie, index) => (
+          favoriteMovies?.map((favMovie, index) => (
             <FavoriteMoviesItem key={index} favMovie={favMovie}/>
           ))
         }
@@ -80,7 +80,7 @@ const App = () => {
       ? <Spinner/>
       : <MovieTileContainer>
         {
-          movies.map((movie, index) => (
+          movies?.map((movie, index) => (
             <MovieTile key={index} movie={movie} addMovieToFavorites={addMovieToFavorites} removeMovieFromFavorites={removeMovieFromFavorites} favoriteMovies={favoriteMovies}/>
           ))
         }
