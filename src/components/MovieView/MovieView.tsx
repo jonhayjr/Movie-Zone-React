@@ -14,7 +14,7 @@ const apiKey = process.env.REACT_APP_MOVIES_API_KEY;
 
 const MovieView = () => {
 
-    const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
